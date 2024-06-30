@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replicate | Testing</title>
+</head>
+
+<body>
+    <h2>Hello World</h2>
+
+    <script>
+        window.Replicate = window.Replicate || {};
+        window.Replicate.access_token = '8711512d-b177-47d5-94e0-3b469105d9fd';
+
+        (function (d) {
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = 'http://localhost:8080/widget/widget.umd.js';
+            s.onload = function () {
+                if (window.Replicate && window.Replicate.init) {
+                    window.Replicate.init();
+                } else {
+                    console.error('Replicate init function not found');
+                }
+            };
+            (d.head || d.body).appendChild(s);
+        })(document);
+    </script>
+</body>
+
+</html>
